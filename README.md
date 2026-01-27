@@ -2,7 +2,7 @@
 
 ```bash
 cd ~
-git clone ...
+git clone git@github.com:MichalLauer/dotfiles.git
 ```
 
 # Git (>= v2.36)
