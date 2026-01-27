@@ -1,0 +1,14 @@
+[user]
+    name = Michal Lauer
+    email = michal.lauer.25@gmail.com
+
+[alias]
+    ca = commit --amend
+    can = commit --amend --no-edit
+    s = status -sbu
+
+[includeIf "hasconfig:remote.*.url:git@github.com:Red-Media/**"]
+    path = ~/dotfiles/git/.gitconfig-publicis
+
+[includeIf "hasconfig:remote.*.url:https://github.com/MichalLauer/**"]
+    path = ~/dotfiles/git/.gitconfig-personal

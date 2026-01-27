@@ -1,6 +1,19 @@
-# MacOS
+# Init
 
+```bash
 cd ~
 git clone ...
-ln -s ~/dotfiles/macos/.bashrc /Users/miclauer/.bashrc
-ln -s ~/dotfiles/macos/.zshrc /Users/miclauer/.zshrc
+```
+
+# Git (>= v2.36)
+
+```bash
+ln -s ~/dotfiles/git/.gitconfig ~/.gitconfig
+```
+
+# MacOS
+
+```bash
+ln -s ~/dotfiles/macos/.bashrc ~/.bashrc
+ln -s ~/dotfiles/macos/.zshrc ~/.zshrc
+```
