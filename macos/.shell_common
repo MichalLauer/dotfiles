@@ -1,9 +1,6 @@
 # --- 1. SHARED CONFIGURATION ---
 [[ -d "$HOME/.local/bin" ]] && . "$HOME/.local/bin/env"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
 # Simplified Quarto Check
 [[ -d "/Applications/quarto/bin" ]] && export PATH="/Applications/quarto/bin:$PATH"
 [[ -d "$HOME/Applications/quarto/bin" ]] && export PATH="$HOME/Applications/quarto/bin:$PATH"
@@ -68,3 +65,21 @@ set_custom_prompt() {
 
     PS1="${CYAN}[$branch]${RST} ${MAG}($venv_name)${RST} ${user_host}${WHT}: ${RST}${cwd}${WHT}\$ ${RST}"
 }
+
+# --- 5. DEPENDENCY CHECK ---
+check_dependencies() {
+    local deps=("git" "python3")
+    local missing=()
+
+    for tool in "${deps[@]}"; do
+        if ! command -v "$tool" >/dev/null 2>&1; then
+            missing+=("$tool")
+        fi
+    done
+
+    if [ ${#missing[@]} -ne 0 ]; then
+        echo -e "\033[0;33m[!] Missing dependencies: ${missing[*]}\033[0m"
+    fi
+}
+
+check_dependencies
