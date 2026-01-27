@@ -1,11 +1,10 @@
 # Correct the path to point to the common folder
 source ~/dotfiles/macos/.shell_common
 
-# Ensure prompt substitution is active for Zsh
+# Run on startup and every time the directory changes
+auto_venv_activation
+chpwd_functions+=(auto_venv_activation)
+
+# Prompt settings
 setopt PROMPT_SUBST
-
-# Zsh-specific Prompt Trigger
 precmd() { set_custom_prompt; }
-
-# Autocomplete
-autoload -Uz compinit && compinit
