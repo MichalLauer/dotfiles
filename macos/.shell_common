@@ -1,0 +1,54 @@
+# --- 1. SHARED CONFIGURATION ---
+. "$HOME/.local/bin/env"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+if [[ -d /Users/miclauer/Applications/quarto/bin ]]; then
+  export PATH="/Users/miclauer/Applications/quarto/bin:$PATH"
+fi
+
+# --- 2. THE UNIFIED PROMPT ---
+set_custom_prompt() {
+    # Git Branch
+    local branch=$(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null)
+    branch=${branch:-"---"}
+
+    # 2. Logic for Python Venv (UV / Standard Venv)
+    local venv="---"
+    if [[ -n "$VIRTUAL_ENV" ]]; then
+        # Get the path of the project (the parent of the .venv folder)
+        local project_root=$(dirname "$VIRTUAL_ENV")
+
+        # Only show the venv name if our current directory ($PWD) 
+        # is inside the project root.
+        if [[ "$PWD" == "$project_root"* ]]; then
+            venv=$(basename "$project_root")
+        else
+            # If we left the folder, show --- even if still 'active'
+            venv="---"
+        fi
+    fi
+
+    # Shell-Specific Wrappers
+    local s_np="" e_np="" esc=$'\e'
+    if [[ -n "$ZSH_VERSION" ]]; then
+        s_np="%{" e_np="%}"
+    else
+        s_np="\[" e_np="\]"
+    fi
+
+    # Colors
+    local CYAN="${s_np}${esc}[0;36m${e_np}"
+    local MAG="${s_np}${esc}[0;35m${e_np}"
+    local GRN="${s_np}${esc}[0;32m${e_np}"
+    local YLW="${s_np}${esc}[0;33m${e_np}"
+    local WHT="${s_np}${esc}[0;37m${e_np}"
+    local RST="${s_np}${esc}[0m${e_np}"
+
+    # Build Prompt
+    if [[ -n "$ZSH_VERSION" ]]; then
+        PS1="${CYAN}[$branch]${RST} ${MAG}($venv)${RST} ${GRN}%n@%m${RST}${WHT}: ${RST}${YLW}%~${RST}${WHT}\$ ${RST}"
+    else
+        PS1="${CYAN}[$branch]${RST} ${MAG}($venv)${RST} ${GRN}\u@\h${RST}${WHT}: ${RST}${YLW}\w${RST}${WHT}\$ ${RST}"
+    fi
+}
