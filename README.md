@@ -14,17 +14,17 @@ ln -s ~/dotfiles/git/.gitconfig ~/.gitconfig
 
 ```
 
+# Shell
+
 ## Windows
 
 ```bash
-mklink "%USERPROFILE%\.gitconfig" "%USERPROFILE%\dotfiles\git\.gitconfig"
+ln -s ~/dotfiles/shell/.bashrc ~/.bashrc
 ```
 
 # MacOS
 
 ```bash
-ln -s ~/dotfiles/macos/.bashrc ~/.bashrc
-ln -s ~/dotfiles/macos/.zshrc ~/.zshrc
+ln -s ~/dotfiles/shell/.bashrc ~/.bashrc
+ln -s ~/dotfiles/shell/.zshrc ~/.zshrc
 ```
-
-# 

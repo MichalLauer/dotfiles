@@ -20,13 +20,23 @@ auto_venv_activation() {
     local project_root=$(_find_project_root)
 
     if [[ -n "$project_root" ]]; then
-        # Activate only if the current python doesn't match the local .venv
-        if [[ "$(which python 2>/dev/null)" != "$project_root/.venv/bin/python"* ]]; then
-            command -v deactivate >/dev/null 2>&1 && deactivate
-            source "$project_root/.venv/bin/activate" >/dev/null 2>&1
+        local venv_act_win="$project_root/.venv/Scripts/activate"
+        local venv_act_unix="$project_root/.venv/bin/activate"
+        
+        local act_script=""
+        [[ -f "$venv_act_win" ]] && act_script="$venv_act_win"
+        [[ -f "$venv_act_unix" ]] && act_script="$venv_act_unix"
+
+        if [[ -n "$act_script" ]]; then
+            if [[ "$VIRTUAL_ENV" != "$project_root/.venv" ]]; then
+                command -v deactivate >/dev/null 2>&1 && deactivate
+                source "$act_script" >/dev/null 2>&1
+            fi
+        else
+            # Warning: Project found but no .venv directory or activation script
+            echo -e "\033[0;33m[!] Warning: No virtual environment found in $project_root\033[0m"
         fi
     else
-        # Not in a project? Kill any active env
         if command -v deactivate >/dev/null 2>&1; then
             deactivate >/dev/null 2>&1
             unset VIRTUAL_ENV
@@ -68,7 +78,7 @@ set_custom_prompt() {
 
 # --- 5. DEPENDENCY CHECK ---
 check_dependencies() {
-    local deps=("git" "python3")
+    local deps=("git" "python")
     local missing=()
 
     for tool in "${deps[@]}"; do
