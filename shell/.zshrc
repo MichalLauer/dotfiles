@@ -1,5 +1,5 @@
 # Correct the path to point to the common folder
-source ~/dotfiles/macos/.shell_common
+source ~/dotfiles/shell/.shell_common
 
 # Run on startup and every time the directory changes
 auto_venv_activation

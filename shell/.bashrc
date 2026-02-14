@@ -1,5 +1,5 @@
 # Correct the path to point to the common folder
-source ~/dotfiles/macos/.shell_common
+source ~/dotfiles/shell/.shell_common
 
 # Bash-specific Prompt Trigger
 PROMPT_COMMAND="auto_venv_activation; set_custom_prompt"

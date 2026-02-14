@@ -18,8 +18,8 @@ ln -s ~/dotfiles/git/.gitconfig ~/.gitconfig
 
 ## Windows
 
-```bash
-ln -s ~/dotfiles/shell/.bashrc ~/.bashrc
+```cmd
+mklink %USERPROFILE%\.bashrc %USERPROFILE%\dotfiles\shell\.bashrc
 ```
 
 # MacOS
