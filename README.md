@@ -27,4 +27,5 @@ mklink %USERPROFILE%\.bashrc %USERPROFILE%\dotfiles\shell\.bashrc
 ```bash
 ln -s ~/dotfiles/shell/.bashrc ~/.bashrc
 ln -s ~/dotfiles/shell/.zshrc ~/.zshrc
+ln -s ~/dotfiles/git/.gitconfig ~/.gitconfig
 ```
