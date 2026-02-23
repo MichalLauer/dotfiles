@@ -10,7 +10,7 @@
 	],
 
 	// Positron
-	"terminal.integrated.defaultProfile.windows": "bash",
+	"terminal.integrated.defaultProfile.windows": "Git Bash",
 	"terminal.integrated.defaultProfile.osx": "bash",
 	"terminal.integrated.cursorBlinking": true,
 	"editor.minimap.enabled": false,
