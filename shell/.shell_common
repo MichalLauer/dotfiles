@@ -78,7 +78,7 @@ set_custom_prompt() {
 
 # --- 5. DEPENDENCY CHECK ---
 check_dependencies() {
-    local deps=("git" "python")
+    local deps=("git")
     local missing=()
 
     for tool in "${deps[@]}"; do
