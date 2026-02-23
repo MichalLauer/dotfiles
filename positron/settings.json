@@ -1,0 +1,51 @@
+{
+	// Styling
+	"workbench.colorTheme": "Default Positron Dark",
+	"editor.fontFamily": "Fira Code Retina",
+	"editor.fontLigatures": true,
+	"editor.wordWrap": "on",
+	"editor.cursorBlinking": "smooth",
+	"editor.rulers": [
+		119
+	],
+
+	// Positron
+	"terminal.integrated.defaultProfile.windows": "bash",
+	"terminal.integrated.defaultProfile.osx": "bash",
+	"terminal.integrated.cursorBlinking": true,
+	"editor.minimap.enabled": false,
+	"positron.notebook.enabled": false,
+	"files.associations": {
+		"renv.lock": "json"
+	},
+	"update.mode": "start",
+	"diffEditor.ignoreTrimWhitespace": true,
+
+	// Python
+	"python.languageServer": "None",
+	"[python]": {
+		"editor.defaultFormatter": "charliermarsh.ruff",
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.organizeImports.ruff": "always"
+		}
+	},
+	"notebook.formatOnSave.enabled": true,
+	"notebook.cellExecutionTimeVerbosity": "verbose",
+	"notebook.defaultFormatter": "charliermarsh.ruff",
+
+	// AI
+	"positron.assistant.enable": true,
+	"positron.assistant.consoleActions.enable": false,
+	"positron.assistant.gitIntegration.enable": false,
+	"github.copilot.nextEditSuggestions.enabled": true,
+	"github.copilot.enable": {
+		"*": false
+	},
+	"files.exclude": {
+		"**/.git": false
+	},
+
+	// Extensions
+	"workbench.iconTheme": "material-icon-theme"
+}

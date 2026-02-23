@@ -1,0 +1,25 @@
+[
+    // --- MACOS CONFIG ---
+    {
+        "key": "cmd+enter",
+        "command": "notebook.cell.execute",
+        "when": "isMac && notebookEditorFocused && notebookCellType == 'code'"
+    },
+    {
+        "key": "cmd+enter",
+        "command": "notebook.cell.quitEdit",
+        "when": "isMac && notebookEditorFocused && notebookCellType == 'markup' && notebookCellHasOutputs == false"
+    },
+
+    // --- WINDOWS CONFIG ---
+    {
+        "key": "ctrl+enter",
+        "command": "notebook.cell.execute",
+        "when": "isWindows && notebookEditorFocused && notebookCellType == 'code'"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "notebook.cell.quitEdit",
+        "when": "isWindows && notebookEditorFocused && notebookCellType == 'markup' && notebookCellHasOutputs == false"
+    }
+]
