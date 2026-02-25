@@ -23,6 +23,8 @@
 
 	// Python
 	"python.languageServer": "None",
+	"python.terminal.activateEnvInCurrentTerminal": false,
+	"python.terminal.activateEnvironment": false,
 	"[python]": {
 		"editor.defaultFormatter": "charliermarsh.ruff",
 		"editor.formatOnSave": true,
@@ -47,5 +49,5 @@
 	},
 
 	// Extensions
-	"workbench.iconTheme": "material-icon-theme"
+	"workbench.iconTheme": "material-icon-theme",
 }
