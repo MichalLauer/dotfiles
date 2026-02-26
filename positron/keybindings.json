@@ -10,6 +10,11 @@
         "command": "notebook.cell.quitEdit",
         "when": "isMac && notebookEditorFocused && notebookCellType == 'markup' && notebookCellHasOutputs == false"
     },
+    {
+        "key": "cmd+shift+c",
+        "command": "editor.action.commentLine",
+        "when": "isMac && editorTextFocus && !editorReadonly"
+    },
 
     // --- WINDOWS CONFIG ---
     {
@@ -21,5 +26,29 @@
         "key": "ctrl+enter",
         "command": "notebook.cell.quitEdit",
         "when": "isWindows && notebookEditorFocused && notebookCellType == 'markup' && notebookCellHasOutputs == false"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "editor.action.commentLine",
+        "when": "isWindows && editorTextFocus && !editorReadonly"
+    },
+    
+    // --- Others ---
+    {
+        "key": "shift+cmd+c",
+        "command": "-workbench.action.terminal.openNativeConsole",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "shift+cmd+c",
+        "command": "-positron.variables.copyAsHTML",
+        "when": "positronVariablesFocused"
+    },
+    {
+        "key": "shift+cmd+[BracketLeft]",
+        "command": "-editor.action.commentLine",
+        "when": "editorTextFocus && !editorReadonly"
     }
+
+    // --- New commands ---
 ]
