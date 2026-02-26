@@ -34,6 +34,20 @@
 	"notebook.cellExecutionTimeVerbosity": "verbose",
 	"notebook.defaultFormatter": "charliermarsh.ruff",
 
+	// R
+    "[r]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "Posit.air-vscode"
+    },
+    "[rmd]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "Posit.air-vscode"
+    },
+    "[quarto]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "quarto.quarto"
+    },
+
 	// AI
 	"positron.assistant.enable": true,
 	"positron.assistant.consoleActions.enable": false,
