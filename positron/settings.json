@@ -9,6 +9,7 @@
 		119
 	],
 	"editor.tabSize": 2,
+	"outline.showFunctions": false,
 
 	// Positron
 	"terminal.integrated.defaultProfile.windows": "Git Bash",
@@ -66,4 +67,5 @@
 
 	// Extensions
 	"workbench.iconTheme": "material-icon-theme",
+	"chat.viewSessions.orientation": "stacked",
 }

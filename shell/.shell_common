@@ -1,6 +1,3 @@
-# --- 1. SHARED CONFIGURATION ---
-[[ -d "$HOME/.local/bin" ]] && . "$HOME/.local/bin/env"
-
 # Simplified Quarto Check
 [[ -d "/Applications/quarto/bin" ]] && export PATH="/Applications/quarto/bin:$PATH"
 [[ -d "$HOME/Applications/quarto/bin" ]] && export PATH="$HOME/Applications/quarto/bin:$PATH"
