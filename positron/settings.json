@@ -54,6 +54,7 @@
 
 	// AI
 	"positron.assistant.enable": true,
+	"assistant.sidebarView": true,
 	"positron.assistant.consoleActions.enable": false,
 	"positron.assistant.gitIntegration.enable": false,
 	"github.copilot.nextEditSuggestions.enabled": true,
