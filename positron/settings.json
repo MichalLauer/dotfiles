@@ -10,6 +10,10 @@
 	],
 	"editor.tabSize": 2,
 	"outline.showFunctions": false,
+	"files.exclude": {
+		"**/.git": false,
+		"**/.gitmodules": false
+	},
 
 	// Positron
 	"terminal.integrated.defaultProfile.windows": "Git Bash",
@@ -55,17 +59,14 @@
 	// AI
 	"positron.assistant.enable": true,
 	"assistant.sidebarView": true,
-	"positron.assistant.consoleActions.enable": false,
-	"positron.assistant.gitIntegration.enable": false,
-	"github.copilot.nextEditSuggestions.enabled": true,
+	"chat.useAgentSkills": true,
+	"positron.assistant.aiExcludes": [
+		"*.env"
+	],
 	"github.copilot.enable": {
 		"*": false
 	},
-	"files.exclude": {
-		"**/.git": false
-	},
-	"chat.useAgentSkills": true,
-
+	
 	// Extensions
 	"workbench.iconTheme": "material-icon-theme",
 	"chat.viewSessions.orientation": "stacked",
