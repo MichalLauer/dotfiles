@@ -7,11 +7,10 @@ git clone git@github.com:MichalLauer/dotfiles.git
 
 # Git (>= v2.36)
 
-## MacOS
+## Linux / MacOS
 
 ```bash
 ln -s ~/dotfiles/git/.gitconfig ~/.gitconfig
-
 ```
 
 # Shell
@@ -22,12 +21,12 @@ ln -s ~/dotfiles/git/.gitconfig ~/.gitconfig
 mklink %USERPROFILE%\.bashrc %USERPROFILE%\dotfiles\shell\.bashrc
 ```
 
-## MacOS
+## Linux / MacOS
 
 ```bash
-ln -s ~/dotfiles/shell/.bashrc  ~/.bashrc
-ln -s ~/dotfiles/shell/.zshrc   ~/.zshrc
-ln -s ~/dotfiles/git/.gitconfig ~/.gitconfig
+ln -sf ~/dotfiles/shell/.bashrc  ~/.bashrc
+ln -sf ~/dotfiles/shell/.zshrc   ~/.zshrc
+ln -sf ~/dotfiles/git/.gitconfig ~/.gitconfig
 ```
 
 # Positron
@@ -46,3 +45,9 @@ ln -s ~/dotfiles/positron/keybindings.json ~/Library/Application\ Support/Positr
 ln -s ~/dotfiles/positron/settings.json    ~/Library/Application\ Support/Positron/User/settings.json
 ```
 
+## Linux
+
+```bash
+ln -sf ~/dotfiles/positron/keybindings.json ~/.config/Positron/User/keybindings.json
+ln -sf ~/dotfiles/positron/settings.json    ~/.config/Positron/User/settings.json
+```
