@@ -1,5 +1,6 @@
 # --- 1. SHARED CONFIGURATION ---
-[[ -d "$HOME/.local/bin" ]] && . "$HOME/.local/bin/env"
+# Check for the file itself instead of just the directory
+[[ -f "$HOME/.local/bin/env" ]] && . "$HOME/.local/bin/env"
 
 # Simplified Quarto Check
 [[ -d "/Applications/quarto/bin" ]] && export PATH="/Applications/quarto/bin:$PATH"
