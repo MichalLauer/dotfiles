@@ -8,3 +8,4 @@ chpwd_functions+=(auto_venv_activation)
 # Prompt settings
 setopt PROMPT_SUBST
 precmd() { set_custom_prompt; }
+. "$HOME/.local/bin/env"

@@ -27,6 +27,15 @@
 	"update.mode": "start",
 	"diffEditor.ignoreTrimWhitespace": true,
 	"positron.quarto.inlineOutput.enabled": true,
+	"extensions.allowed": {
+		"ms-toolsai.vscode-jupyter-cell-tags": false,
+		"ms-toolsai.jupyter-keymap": false,
+		"ms-toolsai.vscode-jupyter-slideshow": false,
+		"posit.publisher": false,
+		"meta.pyrefly": false,
+		"GitHub.vscode-pull-request-github": false,
+		"*": true
+	},
 
 	// Python
 	"python.languageServer": "None",
@@ -72,6 +81,6 @@
 	// Extensions
 	"workbench.iconTheme": "material-icon-theme",
 	"chat.viewSessions.orientation": "stacked",
-	"github.copilot.nextEditSuggestions.enabled": false,
+	"github.copilot.nextEditSuggestions.enabled": true,
 	"positron.assistant.notebook.ghostCellSuggestions.enabled": false
 }
