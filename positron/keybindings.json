@@ -32,6 +32,23 @@
         "command": "editor.action.commentLine",
         "when": "isWindows && editorTextFocus && !editorReadonly"
     },
+
+    // --- LINUX CONFIG ---
+    {
+        "key": "ctrl+enter",
+        "command": "notebook.cell.execute",
+        "when": "isLinux && notebookEditorFocused && notebookCellType == 'code'"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "notebook.cell.quitEdit",
+        "when": "isLinux && notebookEditorFocused && notebookCellType == 'markup' && notebookCellHasOutputs == false"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "editor.action.commentLine",
+        "when": "isLinux && editorTextFocus && !editorReadonly"
+    },
     
     // --- Others ---
     {
@@ -49,6 +66,4 @@
         "command": "-editor.action.commentLine",
         "when": "editorTextFocus && !editorReadonly"
     }
-
-    // --- New commands ---
 ]
