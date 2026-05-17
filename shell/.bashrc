@@ -8,4 +8,3 @@ PROMPT_COMMAND="auto_venv_activation; set_custom_prompt"
 for f in "/opt/homebrew/etc/profile.d/bash_completion.sh" "/usr/local/etc/profile.d/bash_completion.sh"; do
     [[ -r "$f" ]] && source "$f" && break
 done
-. "$HOME/.local/bin/env"
