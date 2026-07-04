@@ -10,6 +10,3 @@
 
 [includeIf "hasconfig:remote.*.url:git@github.com:Red-Media/**"]
     path = ~/dotfiles/git/.gitconfig-publicis
-
-[includeIf "hasconfig:remote.*.url:https://github.com/MichalLauer/**"]
-    path = ~/dotfiles/git/.gitconfig-personal
