@@ -67,20 +67,18 @@
     },
 
 	// AI
-	"positron.assistant.enable": true,
-	"assistant.sidebarView": true,
-	"chat.useAgentSkills": true,
-	"positron.assistant.aiExcludes": [
-		"*.env",
-		"_targets/"
+	"assistant.enabled": true,
+	"authentication.openai-compatible.baseUrl": "https://api.deepinfra.com/v1/openai",
+	"positron.assistant.models.overrides.customProvider": [
+		{
+			"name": "DeepSeek V4 Flash",
+			"identifier": "deepseek-ai/DeepSeek-V4-Flash-0731"
+		}
 	],
+
+	// Extensions
+	"workbench.iconTheme": "material-icon-theme",
 	"github.copilot.enable": {
 		"*": false
 	},
-	
-	// Extensions
-	"workbench.iconTheme": "material-icon-theme",
-	"chat.viewSessions.orientation": "stacked",
-	"github.copilot.nextEditSuggestions.enabled": true,
-	"positron.assistant.notebook.ghostCellSuggestions.enabled": false
 }
