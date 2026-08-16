@@ -26,7 +26,6 @@
 	},
 	"update.mode": "start",
 	"diffEditor.ignoreTrimWhitespace": true,
-	"positron.quarto.inlineOutput.enabled": true,
 	"extensions.allowed": {
 		"ms-toolsai.vscode-jupyter-cell-tags": false,
 		"ms-toolsai.jupyter-keymap": false,
@@ -68,17 +67,10 @@
 
 	// AI
 	"assistant.enabled": true,
-	"authentication.openai-compatible.baseUrl": "https://api.deepinfra.com/v1/openai",
-	"positron.assistant.models.overrides.customProvider": [
-		{
-			"name": "DeepSeek V4 Flash",
-			"identifier": "deepseek-ai/DeepSeek-V4-Flash-0731"
-		}
-	],
-
-	// Extensions
-	"workbench.iconTheme": "material-icon-theme",
 	"github.copilot.enable": {
 		"*": false
 	},
+
+	// Extensions
+	"workbench.iconTheme": "material-icon-theme",
 }
