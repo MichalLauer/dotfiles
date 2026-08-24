@@ -1,0 +1,36 @@
+{
+  "$schema": "./providers.schema.json",
+  "version": 1,
+  "providers": {
+    "openai-compatible": {
+      "baseUrl": "https://api.deepinfra.com/v1/openai",
+      "models": {
+        "discovery": "off",
+        "custom": [
+          {
+            "id": "deepseek-ai/DeepSeek-V4-Flash-0731",
+            "name": "DeepSeek V4 Flash",
+            "maxContextLength": 1048576,
+            "supportsTools": true,
+            "supportsImages": false,
+            "supportsToolResultImages": false,
+            "supportsWebSearch": false,
+            "maxInputTokens": 1048576,
+            "maxOutputTokens": 131072
+          },
+          {
+            "id": "deepseek-ai/DeepSeek-V4-Pro-0813",
+            "name": "DeepSeek V4 Pro",
+            "maxContextLength": 1048576,
+            "supportsTools": true,
+            "supportsImages": false,
+            "supportsToolResultImages": false,
+            "supportsWebSearch": false,
+            "maxInputTokens": 1048576,
+            "maxOutputTokens": 131072
+          }
+        ]
+      }
+    }
+  }
+}

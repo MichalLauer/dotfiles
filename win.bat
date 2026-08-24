@@ -15,4 +15,11 @@ mklink "%APPDATA%\Positron\User\keybindings.json" "%USERPROFILE%\dotfiles\positr
 if exist "%APPDATA%\Positron\User\settings.json" del "%APPDATA%\Positron\User\settings.json"
 mklink "%APPDATA%\Positron\User\settings.json" "%USERPROFILE%\dotfiles\positron\settings.json"
 
+:: Posit AI
+if exist "%USERPROFILE%\.posit\ai\providers.json" del "%USERPROFILE%\.posit\ai\providers.json"
+mklink "%USERPROFILE%\.posit\ai\providers.json" "%USERPROFILE%\dotfiles\.posit\ai\providers.json"
+
+if exist "%USERPROFILE%\.posit\ai\providers.schema.json" del "%USERPROFILE%\.posit\ai\providers.schema.json"
+mklink "%USERPROFILE%\.posit\ai\providers.schema.json" "%USERPROFILE%\dotfiles\.posit\ai\providers.schema.json"
+
 echo Dotfiles setup complete for Windows.
