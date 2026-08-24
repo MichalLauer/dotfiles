@@ -93,4 +93,7 @@ check_dependencies() {
     fi
 }
 
+# Workaround for quarto-dev/quarto-cli#14775 (Positron injects malformed QUARTO_R on Windows)
+quarto() { QUARTO_R= command quarto "$@"; }
+
 check_dependencies
