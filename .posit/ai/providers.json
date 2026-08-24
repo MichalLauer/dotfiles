@@ -14,9 +14,9 @@
             "supportsTools": true,
             "supportsImages": false,
             "supportsToolResultImages": false,
-            "supportsWebSearch": false,
+            "supportsWebSearch": true,
             "maxInputTokens": 1048576,
-            "maxOutputTokens": 131072
+            "maxOutputTokens": 393216
           },
           {
             "id": "deepseek-ai/DeepSeek-V4-Pro-0813",
@@ -25,9 +25,9 @@
             "supportsTools": true,
             "supportsImages": false,
             "supportsToolResultImages": false,
-            "supportsWebSearch": false,
+            "supportsWebSearch": true,
             "maxInputTokens": 1048576,
-            "maxOutputTokens": 131072
+            "maxOutputTokens": 393216
           }
         ]
       }
