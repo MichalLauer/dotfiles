@@ -1,6 +1,5 @@
 {
   "$schema": "https://assistant.posit.co/schemas/providers.schema.json",
-  "version": 1,
   "providers": {
     "openai-compatible": {
       "baseUrl": "https://api.deepinfra.com/v1/openai",

@@ -1,4 +1,19 @@
 {
+  "$schema": "https://assistant.posit.co/schemas/settings.schema.json",
+  "features": {
+    "showTips": false,
+    "experimentalFeatures": true
+  },
+  // // MCPs
+  // "mcpServers": {
+  //   "r-btw": {
+  //     "type": "local",
+  //     "command": ["Rscript", "-e", "btw::btw_mcp_server()"],
+  //     "enabled": true,
+  //     "timeout": 10000
+  //   }
+  // },
+  // Plugins & Marketplaces
   "enabledPlugins": {
     "polars@polars": true,
     "astral@astral-sh": true
