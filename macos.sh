@@ -13,8 +13,9 @@ ln -sf ~/dotfiles/positron/keybindings.json ~/Library/Application\ Support/Posit
 ln -sf ~/dotfiles/positron/settings.json ~/Library/Application\ Support/Positron/User/settings.json
 
 # Posit AI
-mkdir -p ~/.posit/ai
+mkdir -p ~/.posit/ai/assistant
 ln -sf ~/dotfiles/.posit/ai/providers.json ~/.posit/ai/providers.json
 ln -sf ~/dotfiles/.posit/ai/providers.schema.json ~/.posit/ai/providers.schema.json
+ln -sf ~/dotfiles/.posit/ai/assistant/settings.json ~/.posit/ai/assistant/settings.json
 
 echo "Dotfiles setup complete for macOS."

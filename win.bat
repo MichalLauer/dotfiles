@@ -22,4 +22,7 @@ mklink "%USERPROFILE%\.posit\ai\providers.json" "%USERPROFILE%\dotfiles\.posit\a
 if exist "%USERPROFILE%\.posit\ai\providers.schema.json" del "%USERPROFILE%\.posit\ai\providers.schema.json"
 mklink "%USERPROFILE%\.posit\ai\providers.schema.json" "%USERPROFILE%\dotfiles\.posit\ai\providers.schema.json"
 
+if exist "%USERPROFILE%\.posit\ai\assistant\settings.json" del "%USERPROFILE%\.posit\ai\assistant\settings.json"
+mklink "%USERPROFILE%\.posit\ai\assistant\settings.json" "%USERPROFILE%\dotfiles\.posit\ai\assistant\settings.json"
+
 echo Dotfiles setup complete for Windows.
