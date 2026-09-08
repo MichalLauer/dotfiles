@@ -1,0 +1,20 @@
+{
+  "enabledPlugins": {
+    "polars@polars": true,
+    "astral@astral-sh": true
+  },
+  "extraKnownMarketplaces": {
+    "polars": {
+      "source": {
+        "source": "url",
+        "url": "https://github.com/polars-inc/skills"
+      }
+    },
+    "astral-sh": {
+      "source": {
+        "source": "url",
+        "url": "https://github.com/astral-sh/claude-code-plugins"
+      }
+    }
+  }
+}

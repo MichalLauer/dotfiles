@@ -9,7 +9,7 @@ git clone git@github.com:MichalLauer/dotfiles.git
 
 ## Windows
 
-Run Command Prompt as admin, and
+Command Prompt as admin:
 
 ```cmd
 cd C:\Users\Michal\dotfiles && win.bat
