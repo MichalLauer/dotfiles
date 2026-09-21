@@ -31,5 +31,10 @@
         "url": "https://github.com/astral-sh/claude-code-plugins"
       }
     }
+  },
+  // AI
+  "preferredModel": {
+    "id": "deepseek-ai/DeepSeek-V4.1-Flash",
+    "provider": "DeepInfra"
   }
 }
