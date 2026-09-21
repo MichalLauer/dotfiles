@@ -67,10 +67,13 @@
 
 	// AI
 	"assistant.enabled": true,
-	"github.copilot.enable": {
+	// Next Edit Suggestions (only for PositAI provider)
+	"github.copilot.nextEditSuggestions.enabled": false,
+	"nextEditSuggestions.enabled": {
 		"*": false
 	},
-
+	
 	// Extensions
 	"workbench.iconTheme": "material-icon-theme",
+	"redhat.telemetry.enabled": false,
 }
