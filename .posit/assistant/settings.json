@@ -34,7 +34,7 @@
   },
   // AI
   "preferredModel": {
-    "id": "deepseek-ai/DeepSeek-V4.1-Flash",
+    "id": "zai-org/GLM-5.3-Flash",
     "provider": "DeepInfra"
   }
 }

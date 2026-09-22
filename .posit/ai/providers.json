@@ -10,28 +10,6 @@
           "discovery": "off",
           "custom": [
             {
-              "id": "deepseek-ai/DeepSeek-V4-Flash-0731",
-              "name": "DeepSeek V4 Flash",
-              "maxContextLength": 1048576,
-              "supportsTools": true,
-              "supportsImages": false,
-              "supportsToolResultImages": false,
-              "supportsWebSearch": true,
-              "maxInputTokens": 1048576,
-              "maxOutputTokens": 393216
-            },
-            {
-              "id": "deepseek-ai/DeepSeek-V4-Pro-0813",
-              "name": "DeepSeek V4 Pro",
-              "maxContextLength": 1048576,
-              "supportsTools": true,
-              "supportsImages": false,
-              "supportsToolResultImages": false,
-              "supportsWebSearch": true,
-              "maxInputTokens": 1048576,
-              "maxOutputTokens": 393216
-            },
-            {
               "id": "deepseek-ai/DeepSeek-V4.1-Flash",
               "name": "DeepSeek V4.1 Flash",
               "maxContextLength": 1048576,
@@ -47,6 +25,34 @@
               ],
               "maxInputTokens": 1048576,
               "maxOutputTokens": 393216
+            },
+            {
+              "id": "zai-org/GLM-5.3-Flash",
+              "name": "GLM 5.3 Flash",
+              "maxContextLength": 1048576,
+              "supportsTools": true,
+              "supportsImages": true,
+              "supportsToolResultImages": true,
+              "supportsWebSearch": true,
+              "supportedInputMediaTypes": [
+                "image/jpeg",
+                "image/png",
+                "image/gif",
+                "image/webp"
+              ],
+              "maxInputTokens": 1048576,
+              "maxOutputTokens": 131072
+            },
+            {
+              "id": "zai-org/GLM-5.3",
+              "name": "GLM 5.3",
+              "maxContextLength": 1048576,
+              "supportsTools": true,
+              "supportsImages": false,
+              "supportsToolResultImages": false,
+              "supportsWebSearch": true,
+              "maxInputTokens": 1048576,
+              "maxOutputTokens": 131072
             }
           ]
         }
