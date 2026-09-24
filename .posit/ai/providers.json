@@ -1,5 +1,6 @@
 {
   "$schema": "https://assistant.posit.co/schemas/providers.schema.json",
+  "version": 1,
   "providers": {
     "custom": {
       "DeepInfra": {
@@ -24,11 +25,17 @@
                 "image/webp"
               ],
               "maxInputTokens": 1048576,
-              "maxOutputTokens": 393216
+              "maxOutputTokens": 131072,
+              "thinkingEffortLevels": [
+                "none",
+                "low",
+                "medium",
+                "high"
+              ]
             },
             {
-              "id": "zai-org/GLM-5.3-Flash",
-              "name": "GLM 5.3 Flash",
+              "id": "XiaomiMiMo/MiMo-V2.6-Pro",
+              "name": "MiMo V2.6 Pro",
               "maxContextLength": 1048576,
               "supportsTools": true,
               "supportsImages": true,
@@ -41,18 +48,13 @@
                 "image/webp"
               ],
               "maxInputTokens": 1048576,
-              "maxOutputTokens": 131072
-            },
-            {
-              "id": "zai-org/GLM-5.3",
-              "name": "GLM 5.3",
-              "maxContextLength": 1048576,
-              "supportsTools": true,
-              "supportsImages": false,
-              "supportsToolResultImages": false,
-              "supportsWebSearch": true,
-              "maxInputTokens": 1048576,
-              "maxOutputTokens": 131072
+              "maxOutputTokens": 65536,
+              "thinkingEffortLevels": [
+                "none",
+                "low",
+                "medium",
+                "high"
+              ]
             }
           ]
         }
