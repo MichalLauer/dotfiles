@@ -14,21 +14,29 @@
   //   }
   // },
   // Plugins & Marketplaces
-  "enabledPlugins": {
-    "polars@polars": true,
-    "astral@astral-sh": true
-  },
   "extraKnownMarketplaces": {
+    "astral-sh": {
+      "source": {
+        "source": "url",
+        "url": "https://github.com/astral-sh/claude-code-plugins"
+      }
+    },
+    "ml-skills": {
+      "source": {
+        "source": "url",
+        "url": "https://github.com/MichalLauer/skills"
+      }
+    },
     "polars": {
       "source": {
         "source": "url",
         "url": "https://github.com/polars-inc/skills"
       }
     },
-    "astral-sh": {
+    "posit-dev-skills": {
       "source": {
         "source": "url",
-        "url": "https://github.com/astral-sh/claude-code-plugins"
+        "url": "https://github.com/posit-dev/skills"
       }
     }
   },
@@ -36,6 +44,7 @@
   "preferredModel": {
     "id": "deepseek-ai/DeepSeek-V4.1-Flash",
     "provider": "DeepInfra",
-    "thinkingEffort": "none"
-  }
+    "thinkingEffort": "medium"
+  },
+  "approvalMode": "auto"
 }
