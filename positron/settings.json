@@ -20,7 +20,6 @@
 	"terminal.integrated.defaultProfile.osx": "bash",
 	"terminal.integrated.cursorBlinking": true,
 	"editor.minimap.enabled": false,
-	"positron.notebook.enabled": false,
 	"files.associations": {
 		"renv.lock": "json"
 	},
@@ -45,7 +44,8 @@
 		"editor.formatOnSave": true,
 		"editor.codeActionsOnSave": {
 			"source.organizeImports.ruff": "always"
-		}
+		},
+		"diffEditor.ignoreTrimWhitespace": false
 	},
 	"notebook.formatOnSave.enabled": true,
 	"notebook.cellExecutionTimeVerbosity": "verbose",
@@ -73,7 +73,12 @@
 		"*": false
 	},
 	
-	// Extensions
+	// Notebooks
+	"positron.assistant.notebook.ghostCellSuggestions.enabled": false,
+	"notebook.outline.showCodeCellSymbols": false,
+	"quarto.symbols.showCodeCellsInOutline": false,
+	
+	// Extensions, others
 	"workbench.iconTheme": "material-icon-theme",
 	"redhat.telemetry.enabled": false,
 }
