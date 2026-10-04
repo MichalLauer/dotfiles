@@ -1,8 +1,9 @@
 {
 	// Styling
 	"workbench.colorTheme": "Default Positron Dark",
-	"editor.fontFamily": "Fira Code Retina",
+	"editor.fontFamily": "Fira Code",
 	"editor.fontLigatures": true,
+	"editor.fontWeight": "450",
 	"editor.wordWrap": "on",
 	"editor.cursorBlinking": "smooth",
 	"editor.rulers": [
