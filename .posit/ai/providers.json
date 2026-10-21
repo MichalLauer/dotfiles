@@ -17,7 +17,7 @@
               "supportsTools": true,
               "supportsImages": true,
               "supportsToolResultImages": true,
-              "supportsWebSearch": true,
+              "supportsWebSearch": false,
               "supportedInputMediaTypes": [
                 "image/jpeg",
                 "image/png",
@@ -40,7 +40,7 @@
               "supportsTools": true,
               "supportsImages": true,
               "supportsToolResultImages": true,
-              "supportsWebSearch": true,
+              "supportsWebSearch": false,
               "supportedInputMediaTypes": [
                 "image/jpeg",
                 "image/png",

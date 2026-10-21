@@ -46,5 +46,8 @@
     "provider": "DeepInfra",
     "thinkingEffort": "medium"
   },
-  "approvalMode": "auto"
+  "approvalMode": "auto",
+  "preferredModel": {
+    "webSearch": false
+  }
 }
