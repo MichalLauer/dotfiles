@@ -45,5 +45,10 @@
     "id": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
     "provider": "DeepInfra",
     "thinkingEffort": "medium"
+  },
+  "preferredModel": {
+    "id": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+    "provider": "DeepInfra",
+    "thinkingEffort": "medium"
   }
 }
