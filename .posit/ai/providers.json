@@ -7,13 +7,15 @@
         "type": "openai-compatible",
         "enabled": true,
         "baseUrl": "https://api.deepinfra.com/v1/openai",
+        "protocol": "openai-chat",
         "models": {
           "discovery": "off",
           "custom": [
             {
-              "id": "deepseek-ai/DeepSeek-V4.1-Flash",
-              "name": "DeepSeek V4.1 Flash",
+              "id": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+              "name": "DeepSeek V4.1 Flash 1017",
               "maxContextLength": 1048576,
+              "maxOutputTokens": 16384,
               "supportsTools": true,
               "supportsImages": true,
               "supportsToolResultImages": true,
@@ -21,11 +23,8 @@
               "supportedInputMediaTypes": [
                 "image/jpeg",
                 "image/png",
-                "image/gif",
                 "image/webp"
               ],
-              "maxInputTokens": 1048576,
-              "maxOutputTokens": 131072,
               "thinkingEffortLevels": [
                 "none",
                 "low",
@@ -37,6 +36,7 @@
               "id": "XiaomiMiMo/MiMo-V2.6-Pro",
               "name": "MiMo V2.6 Pro",
               "maxContextLength": 1048576,
+              "maxOutputTokens": 16384,
               "supportsTools": true,
               "supportsImages": true,
               "supportsToolResultImages": true,
@@ -44,11 +44,8 @@
               "supportedInputMediaTypes": [
                 "image/jpeg",
                 "image/png",
-                "image/gif",
                 "image/webp"
               ],
-              "maxInputTokens": 1048576,
-              "maxOutputTokens": 65536,
               "thinkingEffortLevels": [
                 "none",
                 "low",
