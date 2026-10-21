@@ -41,7 +41,7 @@
     }
   },
   // AI
-  "preferredModel": {
+  "defaultModel": {
     "id": "deepseek-ai/DeepSeek-V4.1-Flash",
     "provider": "DeepInfra",
     "thinkingEffort": "medium"
