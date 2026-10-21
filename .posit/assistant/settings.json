@@ -2,7 +2,10 @@
   "$schema": "https://assistant.posit.co/schemas/settings.schema.json",
   "features": {
     "showTips": false,
-    "experimentalFeatures": true
+    "experimentalFeatures": true,
+    "showConversationCost": false,
+    "showTurnCost": false,
+    "cacheKeepaliveWidget": false
   },
   // // MCPs
   // "mcpServers": {
