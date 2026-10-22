@@ -48,5 +48,8 @@
     "id": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
     "provider": "DeepInfra",
     "thinkingEffort": "medium"
+  },
+  "sandbox": {
+    "enabled": true
   }
 }
