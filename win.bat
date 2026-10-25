@@ -15,15 +15,19 @@ mklink "%APPDATA%\Positron\User\keybindings.json" "%USERPROFILE%\dotfiles\positr
 if exist "%APPDATA%\Positron\User\settings.json" del "%APPDATA%\Positron\User\settings.json"
 mklink "%APPDATA%\Positron\User\settings.json" "%USERPROFILE%\dotfiles\positron\settings.json"
 
-:: Posit AI
-if exist "%USERPROFILE%\.posit\ai\providers.json" del "%USERPROFILE%\.posit\ai\providers.json"
-mklink "%USERPROFILE%\.posit\ai\providers.json" "%USERPROFILE%\dotfiles\.posit\ai\providers.json"
+:: Posit Assistant Providers (disabled)
+:: if not exist "%USERPROFILE%\.posit\ai" mkdir "%USERPROFILE%\.posit\ai"
+:: if exist "%USERPROFILE%\.posit\ai\providers.json" del "%USERPROFILE%\.posit\ai\providers.json"
+:: mklink "%USERPROFILE%\.posit\ai\providers.json" "%USERPROFILE%\dotfiles\.posit\ai\providers.json"
 
-if exist "%USERPROFILE%\.posit\ai\providers.schema.json" del "%USERPROFILE%\.posit\ai\providers.schema.json"
-mklink "%USERPROFILE%\.posit\ai\providers.schema.json" "%USERPROFILE%\dotfiles\.posit\ai\providers.schema.json"
+:: Posit Assistant Setup (disabled)
+:: if not exist "%USERPROFILE%\.posit\assistant" mkdir "%USERPROFILE%\.posit\assistant"
+:: if exist "%USERPROFILE%\.posit\assistant\settings.json" del "%USERPROFILE%\.posit\assistant\settings.json"
+:: mklink "%USERPROFILE%\.posit\assistant\settings.json" "%USERPROFILE%\dotfiles\.posit\assistant\settings.json"
 
-if not exist "%USERPROFILE%\.posit\assistant" mkdir "%USERPROFILE%\.posit\assistant"
-if exist "%USERPROFILE%\.posit\assistant\settings.json" del "%USERPROFILE%\.posit\assistant\settings.json"
-mklink "%USERPROFILE%\.posit\assistant\settings.json" "%USERPROFILE%\dotfiles\.posit\assistant\settings.json"
+:: OpenCode
+if not exist "%USERPROFILE%\.config\opencode" mkdir "%USERPROFILE%\.config\opencode"
+if exist "%USERPROFILE%\.config\opencode\opencode.jsonc" del "%USERPROFILE%\.config\opencode\opencode.jsonc"
+mklink "%USERPROFILE%\.config\opencode\opencode.jsonc" "%USERPROFILE%\dotfiles\.opencode\opencode.jsonc"
 
 echo Dotfiles setup complete for Windows.
