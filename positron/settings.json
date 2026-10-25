@@ -82,4 +82,9 @@
 	// Extensions, others
 	"workbench.iconTheme": "material-icon-theme",
 	"redhat.telemetry.enabled": false,
+	"json.schemaDownload.trustedDomains": {
+		"https://assistant.posit.co/": true,
+		"https://models.dev": true,
+		"https://opencode.ai": true
+	},
 }
