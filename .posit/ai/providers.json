@@ -12,6 +12,38 @@
           "discovery": "off",
           "custom": [
             {
+              "id": "moonshotai/Kimi-K2.6",
+              "name": "Kimi K2.6",
+              "maxContextLength": 262144,
+              "maxOutputTokens": 16384,
+              "supportsTools": true,
+              "supportsImages": true,
+              "supportsToolResultImages": true,
+              "supportsWebSearch": false,
+              "supportedInputMediaTypes": [
+                "image/jpeg",
+                "image/png",
+                "image/webp"
+              ],
+              "thinkingEffortLevels": ["none", "low", "medium", "high"]
+            },
+            {
+              "id": "moonshotai/Kimi-K3",
+              "name": "Kimi K3",
+              "maxContextLength": 1048576,
+              "maxOutputTokens": 16384,
+              "supportsTools": true,
+              "supportsImages": true,
+              "supportsToolResultImages": true,
+              "supportsWebSearch": false,
+              "supportedInputMediaTypes": [
+                "image/jpeg",
+                "image/png",
+                "image/webp"
+              ],
+              "thinkingEffortLevels": ["none", "low", "medium", "high"]
+            },
+            {
               "id": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
               "name": "DeepSeek V4.1 Flash 1017",
               "maxContextLength": 1048576,
@@ -25,12 +57,7 @@
                 "image/png",
                 "image/webp"
               ],
-              "thinkingEffortLevels": [
-                "none",
-                "low",
-                "medium",
-                "high"
-              ]
+              "thinkingEffortLevels": ["none", "low", "medium", "high"]
             },
             {
               "id": "XiaomiMiMo/MiMo-V2.6-Pro",
@@ -46,12 +73,7 @@
                 "image/png",
                 "image/webp"
               ],
-              "thinkingEffortLevels": [
-                "none",
-                "low",
-                "medium",
-                "high"
-              ]
+              "thinkingEffortLevels": ["none", "low", "medium", "high"]
             }
           ]
         }
