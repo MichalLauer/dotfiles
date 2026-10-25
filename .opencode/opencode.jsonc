@@ -1,12 +1,18 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "default_agent": "build",
+  "update": "notify",
+
+
+
   "formatter": true,
-    "mcp": {
+  "mcp": {
     "servers": {
       "context7": {
         "type": "local",
         "command": ["npx", "-y", "@upstash/context7-mcp"],
-        "disabled": false,
+        "disabled": false
       },
       "playwright": {
         "type": "local",
@@ -32,6 +38,6 @@
     { "action": "shell", "resource": "git s *",         "effect": "allow" },
     { "action": "shell", "resource": "git l *",         "effect": "allow" },
     { "action": "shell", "resource": "git diff *",      "effect": "allow" },
-    { "action": "shell", "resource": "git show *",      "effect": "allow" },
+    { "action": "shell", "resource": "git show *",      "effect": "allow" }
   ]
 }
