@@ -86,6 +86,11 @@ mean(df$age)
 | `r-cli` | User-facing messages, errors and progress bars | posit-dev |
 | `r-tidyverse-style` | Tidyverse idioms (`.by`, `join_by()`, tidy selection). On scripts it never overrides this skill. | posit-dev |
 | `quarto-authoring` | Quarto documents, code cells, layouts, tables | posit-dev |
+| `write-roxygen-docs` | roxygen2 tags for exported package functions | agent-almanac |
+| `shiny-app` | Shiny app as a plain R package (no golem/rhino) | Local |
+| `shiny-bslib`, `shiny-bslib-theming` | Shiny layouts, cards, value boxes, `bs_theme()` | posit-dev |
+| `build-shiny-module` | Shiny module UI/server pairs, `NS()`, reactive returns | agent-almanac |
+| `shiny-r-optimize` | Slow or hanging Shiny apps, caching, async | posit-dev |
 
 ## Piping, chaining
 

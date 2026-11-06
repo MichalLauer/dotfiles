@@ -31,17 +31,22 @@ cd ~/dotfiles && bash scripts/macos.sh
 
 # OpenCode skills
 
-The local skills (`r-conventions`, `r-project`, `r-rig`) live in `.opencode/skills`.
+The local skills (`r-conventions`, `r-project`, `r-rig`, `shiny-app`) live in `.opencode/skills`.
 
-The posit-dev skills (`r-cli`, `r-testthat`, `r-package-development`, `r-tidyverse-style`, `quarto-authoring`) are downloaded, not committed. Run this after cloning and whenever you want to update them:
+The downloaded skills are not committed. Run this after cloning and whenever you want to update them:
 
 ```bash
-cd ~/dotfiles && bash scripts/get-posit-skills.sh
+cd ~/dotfiles && bash scripts/get-skills.sh
 ```
 
-Existing copies are overwritten.
+Existing copies are overwritten on every run, so local edits to them are lost. Keep personal rules in the local skills instead.
+
+### Local edits to downloaded skills
+
+`get-skills.sh` reinstalls untouched copies. It rewrites only one thing mechanically: `dataFilterUI`/`dataFilterServer` become snake_case, to match the local `shiny-app` skill.
+
+Every other rule this repo needs on top of a downloaded skill is in the local `shiny-app` skill, which lists them under "These override the downloaded skills". Keep personal rules there, not in the downloaded copies.
 
 ## Todo
 
 - Linting skill (`jarl`) — not started.
-- Roxygen2 docs skill — not started. Also absent from posit-dev skills; closest third-party option is `write-roxygen-docs` from `pjt222/agent-almanac`.

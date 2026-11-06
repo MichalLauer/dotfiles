@@ -1,6 +1,11 @@
-# Downloaded skills (scripts/get-posit-skills.sh); regenerate instead of committing
+# Downloaded skills (scripts/get-skills.sh)
 .opencode/skills/r-cli/
 .opencode/skills/r-testthat/
 .opencode/skills/r-package-development/
 .opencode/skills/r-tidyverse-style/
 .opencode/skills/quarto-authoring/
+.opencode/skills/shiny-bslib/
+.opencode/skills/shiny-bslib-theming/
+.opencode/skills/shiny-r-optimize/
+.opencode/skills/build-shiny-module/
+.opencode/skills/write-roxygen-docs/
