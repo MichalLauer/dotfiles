@@ -1,0 +1,6 @@
+# Downloaded skills (scripts/get-posit-skills.sh); regenerate instead of committing
+.opencode/skills/r-cli/
+.opencode/skills/r-testthat/
+.opencode/skills/r-package-development/
+.opencode/skills/r-tidyverse-style/
+.opencode/skills/quarto-authoring/

@@ -1,6 +1,6 @@
 ---
-name: rig
-description: Use the rig CLI to manage R versions, Rtools, package libraries, packages, projects, and R execution on macOS, Linux, and Windows.
+name: r-rig
+description: Use the rig CLI to manage R versions, Rtools, package libraries, packages, projects, and R code execution and evaluation.
 compatibility: Requires the `rig` CLI.
 metadata:
   source: https://rig.r-lib.org/
@@ -11,6 +11,9 @@ metadata:
 - `rig` is a command-line tool (CLI) for managing R environments on macOS, Linux, and Windows.
 - It installs and manages multiple R versions, selects defaults, and manages Rtools on Windows.
 - It manages packages, libraries, and project dependencies, and runs R sessions, scripts, and applications.
+- Always run R code in the local project/library setup.
+- Never install tools and packages globally - always use the local project library.
+  - If there is none, tell it to the user and do not proceed further.
 
 # `rig` control
 
@@ -26,7 +29,7 @@ metadata:
 
 - Prefer the installed rig's help over remembered syntax or behavior.
 - Choose commands appropriate to the current OS, architecture, and shell.
-- Before making changes, establish the target R version, library, project, and installation scope based to the task.
+- Before making changes, establish the target R version, library, project, and installation scope based on the task.
 - Account for indirect changes described in help, such as automatic installation, synchronization, removal, or migration.
 - Use simple commands with only the options needed for the task.
 - Verify the result using relevant inspection commands or an appropriate execution check.

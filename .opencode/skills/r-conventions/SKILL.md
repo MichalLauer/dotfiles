@@ -1,11 +1,11 @@
 ---
 name: r-conventions
-description: R coding conventions covering safe coding practices, style, and naming rules. Use whenever the user wants to write, edit or check any R code, R script file or R code inside another document. It should be also invoked if user wants to only format an R script or code.
+description: R coding conventions covering safe coding practices, style, naming, functions and formatting. Use for any R code in scripts, Quarto or R Markdown cells, or local projects, and for formatting an R script. Not for R package development.
 compatibility: R (>= 4.1)
 ---
 # Long rules
 
-Read these rules only if you need them.
+Read these rules when writing or reviewing functions, or when parameter validation matters.
 
 - [functions.md](references/functions.md)
 
@@ -46,16 +46,46 @@ df$world <- grepl(df$country, df$state)
 mean(df$age)
 ```
 
-## Safety
+## Scope
 
-- Either load the library at the top of the script/document.
-- If there is a possibility of loading the same functions from different packages, use `pkg::fun()`.
-- Never use `attach()`. It silently masks variables and makes code impossible to reason about.
+- These rules apply everywhere except R package source code: scripts, Quarto/R Markdown cells, and local projects where functions are written without building a package.
+- Only for package development, use the `r-package-development` skill instead. Where the two disagree there, that skill wins.
+
+## Code safety
+
+### General R code
+
+- Load all libraries at the top of the script.
+- Never use `attach()`.
 - Avoid `<<-` and `assign()` to modify variables outside a function's scope.
 - Use `vapply()` instead of `sapply()` when the output type matters.
 - Set a seed (`set.seed()`) before any code that relies on randomness, so results are reproducible.
-- Never call `setwd()` inside a script or function. Use relative paths instead.
+- Never call `setwd()`.
+- Build paths with `file.path()`.
+- Never use `require()`.
+- Never use `T` and `F`, always spell out `TRUE` and `FALSE`.
+- Instead of `1:length(x)` use `seq_along(x)`.
+- Instead of `1:nrow(data)` use `seq_len(nrow(data))`.
+- Never call `library()` inside a function.
 
+### Quarto / R Markdown rules
+
+- Use `here::here()` to load files.
+- Load all libraries in the very first cell, setting
+  - `#| warnings: FALSE` for quarto documents, and
+  - `warnings=FALSE` for R Markdown documents.
+
+### Related skills
+
+| Skill | Use for | Source |
+|-----------|------------------------------------------------------------|-----------|
+| `r-rig` | Running and managing R code, R versions and libraries | Local |
+| `r-project` | Project setup, folder layout, `.air.toml`, `AGENTS.md`, git | Local |
+| `r-package-development` | R package structure, devtools, `DESCRIPTION` | posit-dev |
+| `r-testthat` | Writing and organising tests, snapshots, fixtures | posit-dev |
+| `r-cli` | User-facing messages, errors and progress bars | posit-dev |
+| `r-tidyverse-style` | Tidyverse idioms (`.by`, `join_by()`, tidy selection). On scripts it never overrides this skill. | posit-dev |
+| `quarto-authoring` | Quarto documents, code cells, layouts, tables | posit-dev |
 
 ## Piping, chaining
 
@@ -82,10 +112,17 @@ df %>%
 ## Formatting
 
 - All formatting rules should be defined in `.air.toml` (or `air.toml`) at the project root.
-- Whenever you write or change any R code, format the files through the script call below.
-- Never call `air` directly.
+- Inform the user if there is no `.air.toml` (or `air.toml`) in the project root.
+- Always write or change R code in the style defined by `air`.
+- Whenever you write or change any R code, format the files using the `air` cli tool. Use `--check` only to verify.
 
 ```bash
-# Invoke the script from the project root directory.
-bash <skill_directory>/scripts/air-format.sh <file_1.R> <file_2.R>
+# Check if a single file needs to be formatted
+air format --check path_to_file
+# Check if any file in the project needs to be formatted
+air format --check
+# Format a single file
+air format path_to_file
+# Format all files in the project
+air format
 ```

@@ -28,3 +28,20 @@ cd ~/dotfiles && bash scripts/linux.sh
 ```bash
 cd ~/dotfiles && bash scripts/macos.sh
 ```
+
+# OpenCode skills
+
+The local skills (`r-conventions`, `r-project`, `r-rig`) live in `.opencode/skills`.
+
+The posit-dev skills (`r-cli`, `r-testthat`, `r-package-development`, `r-tidyverse-style`, `quarto-authoring`) are downloaded, not committed. Run this after cloning and whenever you want to update them:
+
+```bash
+cd ~/dotfiles && bash scripts/get-posit-skills.sh
+```
+
+Existing copies are overwritten.
+
+## Todo
+
+- Linting skill (`jarl`) — not started.
+- Roxygen2 docs skill — not started. Also absent from posit-dev skills; closest third-party option is `write-roxygen-docs` from `pjt222/agent-almanac`.

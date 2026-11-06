@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
-# Sets up an R project: git, AGENTS.md, <folder>.code-workspace, air (uv tool) + .air.toml,
-# and a rig project.
+# Sets up an R project: git, folder layout, AGENTS.md, <folder>.code-workspace,
+# air (uv tool) + .air.toml, and a rig project.
 # Works in bash on Linux, macOS (bash 3.2+) and Windows (Git Bash).
 #
 # Run from the PROJECT ROOT:  bash <skill-dir>/scripts/setup-project.sh [options]
 #
 # The steps are independent: a missing tool only skips its own step, the rest still run.
+# The folder step only creates missing folders and never touches existing files.
 # The script never installs uv, rig or git. It only installs air (as a uv tool), and only
 # when told to with --install-air=yes.
 #
@@ -118,7 +119,7 @@ if [ -n "$need" ]; then
 fi
 
 # ---------------------------------------------------------------- bookkeeping
-st_git=""; st_agents=""; st_workspace=""; st_air=""; st_airtoml=""; st_rig=""
+st_git=""; st_folders=""; st_agents=""; st_workspace=""; st_air=""; st_airtoml=""; st_rig=""
 has_fail=0; has_missing=0; has_stop=0; merge_pending=0; missing_notes=""
 add_missing() { has_missing=1; missing_notes="${missing_notes}  - $1"$'\n'; }
 
@@ -138,6 +139,25 @@ step_git() {
     st_git="FAILED - git init failed"; has_fail=1
   fi
   echo "$st_git"
+}
+
+step_folders() {
+  echo "== folder layout"
+  created=0
+  for folder in data/bronze data/silver data/gold R output docs; do
+    [ -d "$folder" ] && continue
+    if mkdir -p "$folder"; then
+      created=$((created + 1))
+    else
+      st_folders="FAILED - cannot create $folder"; has_fail=1; echo "$st_folders"; return
+    fi
+  done
+  if [ "$created" -eq 0 ]; then
+    st_folders="all folders already present (nothing done)"
+  else
+    st_folders="created $created folder(s)"
+  fi
+  echo "$st_folders"
 }
 
 step_agents() {
@@ -234,6 +254,7 @@ step_rig() {
 }
 
 step_git
+step_folders
 step_agents
 step_workspace
 step_air
@@ -243,6 +264,7 @@ step_rig
 echo
 echo "SUMMARY"
 echo "  git         : $st_git"
+echo "  folders     : $st_folders"
 echo "  AGENTS.md   : $st_agents"
 echo "  workspace   : $st_workspace"
 echo "  air         : $st_air"

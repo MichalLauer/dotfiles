@@ -1,18 +1,26 @@
+# Scope
+
+- These rules apply everywhere except R package source code: scripts, Quarto/R Markdown cells, and local projects where functions are written without building a package.
+
 # Short, one-line, anonymous functions
 
-- Use the anonymous function `\(x) fnc(x)`.
-- Do not use `function(x) fnc(x)`.
+- Use the anonymous function `\(x) fnc(x)` only as a function argument, for a single short expression.
+- Always use `function(x) { ... }` for named functions, even short ones, and for any anonymous function with more than one expression.
 - Do not use `~ fnc(.x)` from `{purrr}`.
 
 ```r
 # Do
-sapply(X = df, MARGIN = 2, FUN = \(x) mean(x))
+vapply(df, FUN = \(x) mean(x), FUN.VALUE = numeric(1))
+add_one <- function(x) {
+  x + 1
+}
 # Don't
-sapply(X = df, MARGIN = 2, FUN = function(x) mean(x))
-sapply(X = df, MARGIN = 2, FUN = ~ mean(.x))
+lapply(df, function(x) mean(x))
+lapply(df, ~ mean(.x))
+add_one <- \(x) x + 1
 ```
 
-- When creating functions, always put parameters on separate lines.
+- When creating named functions, always put parameters on separate lines.
 
 ```r
 # Do
@@ -28,6 +36,11 @@ fun <- function(a, b = NULL) {
   # ...
 }
 ```
+
+# Code safety
+
+- Never call `library()` inside a function.
+- Within functions, call external functions with their full name, e.g. `dplyr::bind_rows`, `dplyr::filter`.
 
 # Parameter validation
 
@@ -49,8 +62,8 @@ summarize_col <- function(
     rlang::abort("`data` must be a data.frame.")
   }
   rlang::check_required(col)
-  if (!(col %in% colnames(df))) {
-    rlang::abort("`col` must be a colum in `data`.")
+  if (!(col %in% colnames(data))) {
+    rlang::abort("`col` must be a column in `data`.")
   }
   stat <- rlang::arg_match(stat)
 
@@ -68,9 +81,9 @@ summarize_col <- function(
 
 # Documentation
 
+- Applies to exported functions of R packages only.
 - Document every exported function with roxygen2 comments (`#'`) directly above its definition.
-- Always include `@param` for every parameter, `@return` describing the output.
-- Never include an `@example` block.
+- Always include `@param` for every parameter and a `@return` describing the output.
 - Add `@export` only for functions meant to be part of the package's public API.
 - Keep the title (first line) to a single short sentence; put longer explanation in the description paragraph below it.
 
@@ -82,13 +95,13 @@ Template structure:
 #' <Longer function, possibly split into multiple paragraphs if needed>
 #' 
 #' @param p1 <short name> (<required: class>)
-#'     <Longer decription of the parameter>
+#'     <Longer description of the parameter>
 #' 
 #' @param p2 <short name> (<optional: class [default: NULL]>)
-#'     <Longer decription of the parameter>
+#'     <Longer description of the parameter>
 #' 
-#' @param p2 <short name> (<optional: class [default: 1]>)
-#'     <Longer decription of the parameter>
+#' @param p3 <short name> (<optional: class [default: 1]>)
+#'     <Longer description of the parameter>
 #'     <Describe options and their impact.>
 #' 
 #' @return <What is being returned> [<class>].
@@ -108,10 +121,10 @@ Example:
 ```r
 #' Compute variance
 #' 
-#' Compute variance from a given vector if numerical values.
+#' Compute variance from a given vector of numerical values.
 #' 
 #' @param x Input data (required: vector<int>)
-#'     Vector of values from which should the variance be computed.
+#'     Vector of values from which the variance should be computed.
 #' 
 #' @param population Which version to compute (optional: logical [default: TRUE])
 #'     Whether the population variance should be returned or not.
@@ -121,14 +134,14 @@ Example:
 #'       TRUE - Return the population variance.
 #' 
 #' @param return_value What value should be returned? (optional: int<1, 2, 3> [default: 1]>)
-#'     What number from the formula should be returned.
+#'     Which part of the formula should be returned.
 #' 
 #'     Options:
-#'       1 - Return the nominator.
+#'       1 - Return the numerator.
 #'       2 - Return the denominator.
 #'       3 - Return the computed variance.
 #' 
-#' @return Compute value, depending on parameter return_value [numeric].
+#' @return Computed value, depending on parameter return_value [numeric].
 #' 
 #' @export
 variance <- function(

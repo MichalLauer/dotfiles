@@ -28,7 +28,7 @@
   "permissions": [
     // R Language
     { "action": "shell", "resource": "Rscript *", "effect": "deny" },
-    { "action": "shell", "resource": "rig *", "effect": "allow" },
+    { "action": "shell", "resource": "rig * --help", "effect": "allow" },
     { "action": "shell", "resource": "air *", "effect": "allow" },
     // Git rules
     { "action": "shell", "resource": "git *",           "effect": "deny" },
