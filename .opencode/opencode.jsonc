@@ -3,9 +3,6 @@
   "model": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
   "default_agent": "build",
   "update": "notify",
-
-
-
   "formatter": true,
   "mcp": {
     "servers": {
