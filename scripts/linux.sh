@@ -19,7 +19,7 @@ mkdir -p ~/.config/opencode
 ln -sf "$DOTFILES/.opencode/opencode.jsonc" ~/.config/opencode/opencode.jsonc
 
 # OpenCode skills
-mkdir -p ~/.config/opencode/skills
-cp -Rf "$DOTFILES/.opencode/skills/." ~/.config/opencode/skills/
+if [ -e ~/.config/opencode/skills ] || [ -L ~/.config/opencode/skills ]; then rm -rf ~/.config/opencode/skills; fi
+ln -sfn "$DOTFILES/.opencode/skills" ~/.config/opencode/skills
 
 echo "Dotfiles setup complete for Linux."

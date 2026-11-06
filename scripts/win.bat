@@ -23,7 +23,7 @@ if exist "%USERPROFILE%\.config\opencode\opencode.jsonc" del "%USERPROFILE%\.con
 mklink "%USERPROFILE%\.config\opencode\opencode.jsonc" "%DOTFILES%\.opencode\opencode.jsonc"
 
 :: OpenCode skills
-if not exist "%USERPROFILE%\.config\opencode\skills" mkdir "%USERPROFILE%\.config\opencode\skills"
-xcopy /E /I /Y "%DOTFILES%\.opencode\skills\*" "%USERPROFILE%\.config\opencode\skills\"
+if exist "%USERPROFILE%\.config\opencode\skills" rmdir /s /q "%USERPROFILE%\.config\opencode\skills"
+mklink /J "%USERPROFILE%\.config\opencode\skills" "%DOTFILES%\.opencode\skills"
 
 echo Dotfiles setup complete for Windows.
