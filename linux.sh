@@ -12,14 +12,6 @@ mkdir -p ~/.config/Positron/User
 ln -sf ~/dotfiles/positron/keybindings.json ~/.config/Positron/User/keybindings.json
 ln -sf ~/dotfiles/positron/settings.json ~/.config/Positron/User/settings.json
 
-# Posit Assistant Providers (disabled)
-# mkdir -p ~/.posit/ai
-# ln -sf ~/dotfiles/.posit/ai/providers.json ~/.posit/ai/providers.json
-
-# Posit Assistant Setup (disabled)
-# mkdir -p ~/.posit/assistant
-# ln -sf ~/dotfiles/.posit/assistant/settings.json ~/.posit/assistant/settings.json
-
 # OpenCode
 mkdir -p ~/.config/opencode
 ln -sf ~/dotfiles/.opencode/opencode.jsonc ~/.config/opencode/opencode.jsonc
